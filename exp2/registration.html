@@ -1,0 +1,281 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2 - Registration Page</title>
+</head>
+<body link="blue" alink="red" vlink="green">
+    <div class="navig">
+        <ul>
+            <a href="home.html" target="_blank">Home Page</a>
+        </ul>
+        <ul> 
+            <a href="registration.html" target="_self">Registration Page</a>
+        </ul>
+        <ul>
+            <a href="contact.html" target="_blank">Contact Us</a>
+        </ul>
+        <ul>
+            <a href="frame.html" target="_blank">Frame</a>
+        </ul>
+    </div>
+    <hr></hr>
+    <center>
+        <h1><u>Registration</u></h1>
+    </center>
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label class="user">Username: </label>
+                    </td>
+                    <td>
+                        <input type="text" id="uname" name="uname" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="fname">First Name: </label>
+                    </td>
+                    <td>
+                        <input type="text" id="fname" name="fname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="lname">Last Name: </label>
+                    </td>
+                    <td>
+                        <input type="text" id="lname" name="lname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="email">Email ID: </label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" name="email" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="conemail">Confirm Email ID: </label>
+                    </td>
+                    <td>
+                        <input type="email" id="conemail" name="conemail">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Credentials</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label class="pass">Password: </label>
+                    </td>
+                    <td>
+                        <input type="password" id="pass" name="pass" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="repass">Re-enter Password: </label>
+                    </td>
+                    <td>
+                        <input type="password" id="repass" name="repass">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>About</legend>
+            <table>
+                <tr>
+                    <td>
+                        Choose a gender ~
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="gender">
+                            Male <input type="radio" name="gender" id="m"> &nbsp
+                            Female <input type="radio" name="gender" id="f"> &nbsp
+                            Rather not say <input type="radio" name="gender" id="rns">
+                        </label>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Sports of interest ~
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="sport">
+                            Cricket <input type="checkbox" name="sport" id="cric">
+                            <br>
+                            Football <input type="checkbox" name="sport" id="foot">
+                            <br>
+                            Hockey <input type="checkbox" name="sport" id="hock">
+                            <br>
+                            Tennis <input type="checkbox" name="sport" id="ten">
+                            <br>
+                            Basketball <input type="checkbox" name="sport" id="basket">
+                            <br>
+                            Baseball <input type="checkbox" name="sport" id="base">
+                            <br>
+                            Other: <input type="text" name="sport" id="other">
+                        </label>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Select a course:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="course">
+                            B. Tech <input type="radio" name="course" id="btech"> &nbsp&nbsp
+                            MBA Tech <input type="radio" name="course" id="mbatech"> &nbsp&nbsp
+                            B. Tech Integrated <input type="radio" name="course" id="bti"> &nbsp&nbsp
+                            M. Tech <input type="radio" name="course" id="mtech">
+                        </label>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Select a branch:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="branch">
+                            <option value="ce">Computer Engineering</option>
+                            <option value="ai">Artificial Intelligence</option>
+                            <option value="cs">Cyber Security</option>
+                            <option value="ai">Data Science</option>
+                            <option value="ai">Mechanical</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Date of birth:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="dob">
+                            <input type="date" name="dob" id="dob">
+                        </label>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Upload 10th and 12th marksheet:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="marksheet">
+                            <input type="file" multiple="false" accept="image/*" name="marksheet" id="10th12th">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button>Upload file</button>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Choose a favourite colour:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="color" value="#000000" name="color" id="color">
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Image:
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        <input type="image" src="xyz.jpg" width="250">
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Any Notes:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea rows=1  cols=25></textarea>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Rate your course: 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type = "range" min = "10" max = "100" value = "10" name="slider" id="slider">
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        Progress checker:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <progress></progress>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" id="submit"> &nbsp&nbsp
+                        <input type="reset" name="reset" id="reset">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
