@@ -1,0 +1,191 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: lightyellow;
+        padding: 20px;
+    }
+/* header and navbar */
+    h1.tit {
+        font-size: 40px;
+        margin: auto;
+        width: 85%;
+        padding: 8px;
+        font-style: italic;
+    }
+    p.subtit {
+        font-size: 25px;
+        font-family: Garamond;
+    }
+    header {
+        width: 100%;
+        height: 48px;
+        border-bottom: 2px solid black;
+    }
+    .logo {
+        width: 69px;
+        float: left;
+    }
+    .navig {
+        margin-top: 2.5px;
+        float: right;
+        font-size: 1.69em;
+    }
+    a {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin: 17px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+/* slider text and image */
+    .banimg {
+        display: block;
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        background-image: url(bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 20px;
+    }
+    .bandesc {
+        position: absolute;
+        width: 93.75%;
+        height: 18px;
+        top: 75%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    input.see {
+        position: absolute;
+        top: 13.5px;
+        right: 19px;
+        width: 150px;
+        height: 30px;
+        font-size: 0.88em;
+        font-weight: bold;
+        background-color: darkred;
+        color: white;
+        border-radius: 10px;
+    }
+/* section */
+    .pointer {
+        height: 15px;
+        margin-right: 10px;
+    }
+    section {
+        margin-bottom: 20px;
+    }
+/* article */
+    article {
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 20px;
+        width: 75%;
+        text-align: justify;
+    }
+    .triangle {
+        float: left;
+        width: 50px;
+        margin-top: 234px;
+        margin-right: -1px;
+    }
+/* aside */
+    aside {
+        display: inline-block;
+        margin-top: 20px;
+        width: 21%;
+        text-align: justify;
+        padding: 5px;
+        background-color: rgb(73, 73, 73);
+        color: white;
+        border-radius: 10px;
+    }
+    .zozor {
+        margin-left: 28px;
+        height: 200px;
+        width: 200px;
+    }
+    .asideImg {
+        width: 50px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .asideImg1 {
+        border-radius: 20px;
+        width: 50px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 39px;
+    }
+/* footer */
+    footer {
+        border-top: 2px dashed grey;
+    }
+    .upArrow {
+        border-bottom: 1px solid grey;
+        border-right: 1px solid grey;
+        border-left: 1px solid grey;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 45%;
+        width: 30px;
+    }
+    .footer {
+        position: absolute;
+    }
+    .footer1 {
+        position: absolute;
+        left: 425px;
+    }
+    .footer2 {
+        position: absolute;
+        margin-left: 33px;
+        left: 850px;
+    }
+    .footerText {
+        line-height: 6.2vh;
+    }
+    .footerImg {
+        border: 2px solid black;
+        height: 69px;
+        width: 100px;
+        margin: 5px;
+    }
+    .footerList {
+        color: rgb(212, 52, 52);
+        margin-left: 15px;
+        line-height: 3vh;
+    }
+/* triangle */
+    .triangle {
+        position: absolute;
+        top: 70%;
+        right: 24%;
+        width: 20px;
+    }
+/* list bullet style */
+    li {
+        list-style-type: none;
+        position: relative;
+        padding-left: 15px;
+    }
+    li:before {
+        content: "\25BA \0020";
+        font-size: 6px;
+        position: absolute;
+        top: 0.5px;
+        left: -10px;
+    }
+/* other */
+    h1.z {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }

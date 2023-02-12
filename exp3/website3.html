@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 3 - Website 3</title>
+    <style>
+        h2{
+            background-color: lightblue;
+            color: blueviolet;
+        }
+        span.z{
+            color: lightskyblue;    
+        }
+        span.x{
+            color: darkcyan;
+        }
+        span.y{
+            font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+            font-stretch: condensed;
+        }
+        span.q
+        {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+        span.pp
+        {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        tr.a{
+            background-color: lightcyan;
+        }
+        table{
+            text-align: center;
+        }
+        img{
+            float: right;
+            height: 369px;
+            width: 431px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dog D. Dog</h1>
+    <h2>
+        About
+        <img src="dog.png">
+    </h2> 
+    <p>
+        Woof woof!
+        <br>
+        Hi, I'm Dog. I love <span>User Interface Design.</span>
+    </p>
+    <h2>Courses</h2>
+    <p>
+        Here are some of the courses I've taken:
+    </p>
+    <div>
+        <table style="width:63%" border="1">
+            <tr>
+                <th>Course Number</th>
+                <th>Course Title</th>
+                <th>Semester Taken</th>
+            </tr>
+            <tr>
+                <th colspan="3">For Credit</th>
+            </tr>
+            <tr class="a">
+                <th><span class="x">6.813</span></th>
+                <td><span class="z">User Interface Design</span></td>
+                <td><span class="z">Spring 2014</span></td>
+            </tr>
+            <tr>
+                <th><span class="x">6.034</span></th>
+                <td>Artificial Intelligence</td>
+                <td>Fall 2013</td>
+            </tr>
+            <tr class="a">
+                <th><span class="x">6.006</span></th>
+                <td>Introduction to Algorithms</td>
+                <td>Fall 2013</td>
+            </tr>
+            <tr>
+                <th colspan="3">Listner</th>
+            </tr>
+            <tr class="a">
+                <th><span class="x">6.867</span></th>
+                <td>Machine Learning</td>
+                <td>Fall 2013</td>
+            </tr>
+            <tr>
+                <th><span class="x">6.830</span></th>
+                <td>Database System</td>
+                <td>Fall 2012</td>
+            </tr>
+    </table>
+    </div>
+    <h2>Intrests</h2>
+    <p>
+        <span class="y">I am intrested in </span>
+        <span class="pp">HCL,</span> 
+        <span class="q">memes, and youtube videos.</span>
+    </p>
+    <h2>Submit Pet Information</h2>
+    <p>Would love to know what kinds of pet you 'own' (you'll never own me). <strong>Submit below!</strong></p>
+    <form>
+        <p>
+            <label>
+                Name: <input type="text" required>
+            </label>
+        </p>
+        <p>
+            <label>
+                Phylum: <input type="text" required>
+            </label>
+        </p>
+        <p>
+            <label>
+                Select a gender -
+                <select required>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </label>
+        </p>
+        <p>
+            <input type="submit"> &nbsp&nbsp
+            <input type="reset">
+        </p>
+    </form>
+</body>
+</html>
