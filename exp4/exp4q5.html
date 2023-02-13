@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 4 - Question 5</title>
+    <script>
+        let num = 0;
+        let i = 1;
+        let max = 0;
+        function regNumber() {
+            num = parseInt(document.getElementById("num").value);
+            if(num > max) {
+                max = num
+            }   
+            if(i != 5) {
+                document.getElementById('numTitle').innerHTML="Enter the number "+(i+1)+": ";
+            }
+            else {
+                alert("Result -> "+max);
+            }
+            i++;
+        }
+    </script>
+    <style>
+        * {
+            font-family: "Product Sans";
+        }
+        input {
+            display: block;
+            border: 2.5px solid black;
+            border-radius: 7.5px;
+            width: 150px;
+            margin: 7.5px;
+            padding: 5px;
+            font-size: 15px;
+            margin-bottom: 17.5px;
+        }
+        label {
+            margin: 0.5px;
+            padding: 5px;
+            font-size: 19px;
+            font-weight: bold;
+        }
+        .butt {
+            width: 165px;
+        }
+    </style>
+</head>
+<body>
+    <label for="num" id="numTitle">Enter the number 1: </label>
+    <input id="num" type="number" placeholder="enter a number">
+    <input class="butt" type="button" value="Put Value" onclick="regNumber()">
+</body>
+</html>

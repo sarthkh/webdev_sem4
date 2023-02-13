@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 4 - Question 4</title>
+    <script>
+        function stringUC() {
+            let string = document.getElementById("string").value;
+            let s = string.charAt(0).toUpperCase();
+            document.getElementById("result").innerHTML += s + string.slice(1, string.length);
+        }
+    </script>
+    <style>
+        * {
+            font-family: "Product Sans";
+        }
+        input {
+            display: block;
+            border: 2.5px solid black;
+            border-radius: 7.5px;
+            width: 150px;
+            margin: 7.5px;
+            padding: 5px;
+            font-size: 15px;
+            margin-bottom: 17.5px;
+        }
+        label {
+            margin: 0.5px;
+            padding: 5px;
+            font-size: 19px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <label for="string">String:</label>
+    <input id="string" type="text" placeholder="enter a string">
+    <input type="button" value="Convert" onclick="stringUC()">
+    <label id="result">Uppercased string -> </label>
+</body>
+</html>
