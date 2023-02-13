@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 5</title>
+    <link rel="stylesheet" href="exp5.css">
+</head>
+<body>
+    <h1 class="head"><center>Form Validation</center></h1>
+    <div class="box">
+        <label class="error" id="error"></label>
+        <label for="username">
+            Username
+            <span>*</span>
+            <span class="user">(must not contain spaces)</span> 
+        </label>
+            <input type="text" id="username" pattern="^[A-Za-z]+$">
+        <label for="email">
+            Email id
+            <span>*</span>
+        </label>
+            <input type="email" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <label for="password">
+            Password
+            <span>*</span> 
+            <span class="subscript">(min 5 and max 20 and must contain special characters)</span> 
+        </label>
+            <input type="password" id="password" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{5,20}$">
+        <label for="repassword">
+            Re-enter Password
+            <span>*</span>
+            <span class="subscript">(must be same)</span>
+        </label>
+            <input type="password" id="repassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{5,20}$">
+        <label for="phone">
+            Phone number
+            <span>*</span>
+        </label>
+            <input type="text" id="phone" pattern="^[7-9]{1}[0-9]{9}$">
+        <label for="aadhar">
+            Aadhar number
+            <span>*</span>
+        </label>
+            <input type="text" id="aadhar" pattern="^[0-9]{12}$">
+        <label for="pan">
+            Pan card
+            <span>*</span>
+        </label>
+            <input type="text" id="pan" pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$">
+        <label for="hobbies">
+            Hobbies
+            <span>*</span>
+        </label>
+            <input type="checkbox" value="Sports" name="hobbies"><span class="gen">Programming</span> &nbsp;
+            <input type="checkbox" value="Studies" name="hobbies"><span class="gen">Studies</span> &nbsp;
+            <input type="checkbox" value="Studies" name="hobbies"><span class="gen">Sports</span> &nbsp;
+            <input type="checkbox" value="Sleep"name="hobbies"><span class="gen">Sleep</span> &nbsp;
+            <input type="checkbox" value="Sleep"name="hobbies"><span class="gen">Other</span>
+        <label for="gender">
+            Gender
+            <span>*</span>
+        </label>
+            <input type="radio" value="Male" name="gender"><span class="gen">Male</span> &nbsp;
+            <input type="radio" value="Female" name="gender"><span class="gen">Female</span> &nbsp;
+            <input type="radio" value="Rather not say" name="gender"><span class="gen">Rather not say</span>
+        <label for="subject">
+            Subjects
+            <span>*</span>
+        </label>
+            <input type="text" id="subject" list="drop">
+            <datalist id="drop">
+                <option>WP</option>
+                <option>OOPJ</option>
+            </datalist>
+        <br>
+        <button onclick="validate();matchpass()">Submit</button>
+    </div>
+    <script src = "exp5.js"></script>
+</body>
+</html>
