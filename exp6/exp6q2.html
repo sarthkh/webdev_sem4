@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6 - Question 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script type="text/javascript">
+        let myApp = angular.module('myApp', [])
+        myApp.controller('myCtrl1', function($scope) {
+        $scope.likes = 0;
+        $scope.dislikes = 0;
+        $scope.incrementLikes = function() {
+            if($scope.likes == 0) {
+                $scope.likes = 1;
+                $scope.dislikes = 0;
+            }
+            else {
+                $scope.likes = 0;
+            }
+        }
+        $scope.incrementDislikes = function() {
+            if($scope.dislikes == 0) {
+                $scope.dislikes = 1;
+                $scope.likes = 0;
+            }
+            else {
+                $scope.dislikes = 0;
+            }
+        }
+        });
+        myApp.controller('myCtrl2', function($scope) {
+        $scope.likes = 0;
+        $scope.dislikes = 0;
+        $scope.incrementLikes = function() {
+            if($scope.likes == 0) {
+                $scope.likes = 1;
+                $scope.dislikes = 0;
+            }
+            else {
+                $scope.likes = 0;
+            }
+        }
+        $scope.incrementDislikes = function() {
+            if($scope.dislikes == 0) {
+                $scope.dislikes = 1;
+                $scope.likes = 0;
+            }
+            else {
+                $scope.dislikes = 0;
+            }
+        }
+        });
+        myApp.controller('myCtrl3', function($scope) {
+        $scope.likes = 0;
+        $scope.dislikes = 0;
+        $scope.incrementLikes = function() {
+            if($scope.likes == 0) {
+                $scope.likes = 1;
+                $scope.dislikes = 0;
+            }
+            else {
+                $scope.likes = 0;
+            }
+        }
+        $scope.incrementDislikes = function() {
+            if($scope.dislikes == 0) {
+                $scope.dislikes = 1;
+                $scope.likes = 0;
+            }
+            else {
+                $scope.dislikes = 0;
+            }
+        }
+        });
+    </script>
+    <style>
+        * {
+            font-family: "Product Sans";
+        }
+        .head1 {
+            background-image: linear-gradient(to bottom, #1F1C18, #8E0E00);
+            border-radius: 12.5px;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            padding: 17.5px;
+            margin-bottom: 12.5px;
+        }
+        .tag {
+            font-style: italic;
+        }
+        .head2 {
+            background-image: linear-gradient(to bottom, #001510, #00bf8f);
+            border-radius: 12.5px;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            padding: 25px;
+            margin-bottom: 12.5px;
+        }
+        .posts {
+            display: inline-block;
+            background-image: linear-gradient(to bottom, #373B44, #b0a6a6);
+            border-radius: 12.5px;
+            font-size: 35px;
+            color: white;
+            padding: 25px;
+            margin-right: 12.5px;
+            width: max-content;
+        }
+        .post {
+            display: inline-block;
+            background-image: linear-gradient(to bottom, #373B44, #73C8A9);
+            border-radius: 12.5px;
+            font-size: 35px;
+            color: white;
+            padding: 25px;
+            width: max-content;
+        }
+        .img {
+            width: 253px;
+            height: 253px;
+            border-radius: 12.5px;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        }
+        .vote {
+            font-size: 17.5px;
+            font-weight: bold;
+        }
+        .like {
+            width: 35px;
+            height: 35px;
+        }
+        .dislike {
+            width: 35px;
+            height: 35px;
+        }
+        .lidi {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div class="head1">
+        Reddit
+        <br>
+        <strong class="tag">Dive into anything</strong>
+    </div>
+    <div class="head2">New Posts</div>
+    <div class="posts" ng-controller="myCtrl1">
+        <img class="img" src="post1.jpg">
+        <div class="lidi">
+            <span class="vote">Likes: {{likes}}</span> &nbsp;
+            <span class="vote">Dislikes: {{dislikes}}</span>
+        </div>
+        <div>
+            <img class="like" src="like.png" ng-click="incrementLikes()"> &nbsp;
+            <img class="dislike" src="dislike.png" ng-click="incrementDislikes()">
+        </div>
+    </div>
+    <div class="posts" ng-controller="myCtrl2">
+        <img class="img" src="post2.jpg">
+        <div class="lidi">
+            <span class="vote">Likes: {{likes}}</span> &nbsp;
+            <span class="vote">Dislikes: {{dislikes}}</span>
+        </div>
+        <div>
+            <img class="like" src="like.png" ng-click="incrementLikes()"> &nbsp;
+            <img class="dislike" src="dislike.png" ng-click="incrementDislikes()">
+        </div>
+    </div>
+    <div class="posts" ng-controller="myCtrl3">
+        <img class="img" src="post3.jpg">
+        <div class="lidi">
+            <span class="vote">Likes: {{likes}}</span> &nbsp;
+            <span class="vote">Dislikes: {{dislikes}}</span>
+        </div>
+        <div>
+            <img class="like" src="like.png" ng-click="incrementLikes()"> &nbsp;
+            <img class="dislike" src="dislike.png" ng-click="incrementDislikes()">
+        </div>
+    </div>
+</body>
+</html>

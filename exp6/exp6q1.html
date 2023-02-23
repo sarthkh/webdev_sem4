@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6 - Question 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script type="text/javascript">
+        let test = angular.module("test",[]);
+        test.controller("control", function($scope) {
+            $scope.isVisible = false;
+            $scope.showHide = function() {
+                $scope.isVisible = true;
+            }
+            $scope.emptyCart = false;
+            $scope.showCart = function() {
+                $scope.isVisible = true;
+            }
+            $scope.nameDisplay = function() {
+                return ($scope.name || "Anonymous");
+            }
+            $scope.items = [
+                {iname: "Item 1", iprice: 10.00, iquantity: 0, isub: 0},
+                {iname: "Item 2", iprice: 20.00, iquantity: 0, isub: 0},
+                {iname: "Item 3", iprice: 30.00, iquantity: 0, isub: 0},
+                {iname: "Item 4", iprice: 40.00, iquantity: 0, isub: 0},
+                {iname: "Item 5", iprice: 50.00, iquantity: 0, isub: 0}
+            ]
+            $scope.total = function() {
+                var total = 0;
+                angular.forEach($scope.items, function(item) {
+					total += item.iprice * item.iquantity;
+				});
+				return total;
+			};
+            $scope.empCart = function() {
+				angular.forEach($scope.items, function(item) {
+					item.iquantity = 0;
+				});
+			};
+            $scope.removeItem = function(index) {
+				$scope.items.splice(index, 1);
+                if($scope.items.length == 0) {
+                    console.log(1);
+                    $scope.emptyCart = true;
+                }
+			};
+        })
+    </script>
+    <style>
+        * {
+            font-family: "Product Sans";
+        }
+        .head1 {
+            background-color: rgb(10, 74, 191);
+            border-radius: 12.5px;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            padding: 25px;
+            margin-bottom: 12.5px;
+        }
+        .in {
+            display: block;
+            line-height: 25px;
+            border-radius: 12.5px;
+            padding: 7.5px;
+            margin-top: 15px;;
+            margin-bottom: 12.5px;
+        }
+        .head2 {
+            background-color: rgb(98, 98, 164);
+            border-radius: 12.5px;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            padding: 25px;
+            margin-bottom: 12.5px;
+        }
+        .name {
+            background-color: lightsteelblue;
+            border-radius: 12.5px;
+            font-size: large;
+            color: black;
+            padding: 25px;
+            margin-bottom: 12.5px;
+        }
+        .enter {
+            display: block;
+            background-color: rgb(75, 82, 103);
+            border-radius: 12.5px;
+            padding: 7.5px;
+            color: white;
+            font-weight: bold;
+            font-size: 17.5px;
+            width: 10%;
+        }
+        .tab {
+            padding: 25px;
+            width: 100%;
+            text-align: center;
+        }
+        .but {
+            display: block;
+            margin: auto;
+            background-color: rgb(75, 82, 103);
+            border-radius: 7.5px;
+            padding: 2.5px;
+            color: white;
+            font-weight: bold;
+            font-size: 12.5px;
+            width: 75px;
+        }
+        .delBut {
+            display: block;
+            margin: auto;
+            background-color: white;
+            border-radius: 7.5px;
+            padding: 2.5px;
+            color: white;
+            font-weight: bold;
+            font-size: 12.5px;
+            width: 25px;
+        }
+        .del {
+            width: 15px;
+            height: 15px;
+        }
+        .empty {
+            font-weight: bold;
+            font-size: 25px;
+            width: 100%;
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body ng-app="test" ng-controller="control">
+    <div class="head1">Best Buy Store</div>
+    <div class="name">
+        <label>Your name:</label> 
+        <input class="in" type="text" ng-model="name" ng-readonly="isVisible">
+        <h3>Hello {{nameDisplay()}}!</h3>
+        <input class="enter" type="button" value="Enter" ng-click="showHide()">
+    </div>
+    <div class="head2" ng-show="isVisible">Your Cart</div>
+    <table class="tab" ng-show="isVisible">
+        <thead ng-show = "!emptyCart">
+            <tr>
+                <th>Item</th>
+				<th>Price</th>
+				<th>Quantity</th>
+                <th>Add</th>
+                <th>Sub</th>
+				<th>Subtotal</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td ng-bind="item.iname"></td>
+                <td ng-bind="'$' + item.iprice"></td>
+                <td ng-bind="item.iquantity"></td>
+                <td><button class="but" ng-click="item.iquantity = item.iquantity + 1">+</button></td>
+                <td><button class="but" ng-click="item.iquantity = item.iquantity - 1" ng-disabled="item.iquantity == 0">-</button></td>
+				<td ng-bind="'$' + (item.iprice * item.iquantity)"></td>
+                <td><button class="delBut" ng-click="removeItem($index)"><img src="delete.jpg" class="del"></button></td>
+            </tr>
+        </tbody>
+        <tfoot>
+			<tr>
+                <td class="empty" ng-show="emptyCart">Cart is empty.</td>
+				<td ng-hide="!(total() > 0)"><strong>Total:</strong></td>
+				<td ng-if="total() > 0" ng-bind="'$'+total()"></td>
+				<td ng-if="total() > 0"><button class="but" ng-click="empCart()">Clear</button></td>
+			</tr>
+		</tfoot>
+    </table>
+</body>
+</html>

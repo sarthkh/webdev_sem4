@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6 - Question 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script type="text/javascript">
+        let app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.todos = [];
+            $scope.newField = [];
+            $scope.addTodo = function() {
+                $scope.todos.push({text: $scope.todoText, done: false, editing: false});
+                $scope.todoText = "";
+            } 
+            $scope.remaining = function() {
+                let count = 0;
+                angular.forEach($scope.todos, function(todo) {
+                    count += todo.done ? 0 : 1;
+                });
+                return count;
+            }
+            $scope.delete = function() {
+                let oldTodos = $scope.todos;
+                $scope.todos = [];
+                angular.forEach(oldTodos, function(todo) {
+                    if(!todo.done) {
+                        $scope.todos.push(todo);
+                    }
+                });
+            }
+            $scope.remove = function() {
+                $scope.todos.splice(this.$index, 1);
+            }
+            $scope.change = function(field) {
+                let todoIndex = $scope.todos.indexOf(field);
+                $scope.newField[todoIndex] = angular.copy(field);
+                $scope.todos[todoIndex].editing = true;
+            }
+            $scope.save = function(index) {
+                $scope.todos[index].editing = false;
+            }
+            $scope.cancel = function(index) {
+                $scope.todos[index] = $scope.newField[index];      
+            };
+        });
+    </script>
+    <style>
+        * {
+            font-family: "Product Sans";
+        }
+        .head1 {
+            background-image: linear-gradient(to right, #274046, #ffffff);
+            border-radius: 7.5px;
+            font-size: 45px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            padding: 17.5px;
+            margin-bottom: 12.5px;
+        }
+        .in {
+            background-image: linear-gradient(to left, #e2ebf0, #cfd9df);
+            width: 89%;
+            padding: 12.5px;
+            font-size: 15px;
+            border-radius: 25px;
+        }
+        .but {
+            background-image: linear-gradient(to left, #928dab, #1f1c2c);
+            padding: 12.5px;
+            border-radius: 25px;
+            color: white;
+            font-size: large;
+            width: 7.5%;
+            font-weight: bold;
+        }
+        .comp {
+            width: 100%;
+            margin-top: 22.5px;
+            font-weight: bold;
+            font-size: 17.5px;
+            text-align: center;
+        }
+        .del {
+            background-image: linear-gradient(to left, #b31217, #e52d27);
+            margin-top: 15px;
+            margin-left: 42.25%;
+            padding: 10px;
+            border-radius: 25px;
+            color: white;
+            font-size: large;
+            width: 15%;
+            font-weight: bold;
+        }
+        .rem {
+            width: 15px;
+            height: 15px;
+        }
+        .resc {
+            background-image: linear-gradient(to left, #d3cce3, #e9e4f0);
+            padding: 7.5px;
+            margin-top: 12.5px;
+            margin-bottom: 12.5px;
+            border-radius: 25px;
+            color: black;
+            font-size: 12.5px;
+            width: 7.5%;
+        }
+        .inp {
+            background-image: linear-gradient(to left, #e2ebf0, #cfd9df);
+            width: 12.5%;
+            padding: 7.5px;
+            font-size: 12.5px;
+            border-radius: 25px;
+        }
+        .check {
+            margin-left: 10px;
+            margin-right: 10px;
+            vertical-align: bottom;
+            position: relative;
+            top: -14px;
+            width: 25px;
+            height: 25px;
+        }
+        .text {
+            font-size: 15px;
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div class="head1">To Do List</div>
+    <div ng-controller="myCtrl">
+        <form ng-submit="addTodo()">
+            <input class="in" type="text" ng-model="todoText" placeholder="add a new todo here" required> &nbsp;
+            <input class="but" type="submit" value="Add"> 
+        </form>
+        <div class="comp">
+            Incompleted -> {{remaining()}} &nbsp;&nbsp;
+            Completed -> {{todos.length - remaining()}}
+        </div>
+        <input class="del" type="button" value="Delete" ng-click="delete()">
+        <ul>
+            <li ng-repeat="todo in todos | orderBy : $index:true">
+                <button class="resc" type="button" ng-click="remove()">Remove</button>
+                <input class="check" type="checkbox" ng-model="todo.done">
+                <span class="text" ng-hide="todo.editing">{{todo.text}}</span>
+                <input class="inp" type="text" ng-show="todo.editing" ng-model="todo.text">
+                <button class="resc" type="submit" ng-hide="todo.editing" ng-click="change(todo); todo.editing == true">Edit</button>
+                <button class="resc" type="submit" ng-show="todo.editing" ng-click="save($index); todo.editing == false">Save</button>
+                <button class="resc" type="submit" ng-show="todo.editing" ng-click="cancel($index); todo.editing == false">Cancel</button>
+             </li>
+         </ul>
+    </div>
+</body>
+</html>
